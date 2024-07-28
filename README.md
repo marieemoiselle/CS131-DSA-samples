@@ -1,7 +1,7 @@
 # DATA STRUCTURES AND ALGORITHMS
 by: ***Fatima Marie P. Agdon, MSCS***
-#### NOTE
-This is an ongoing repository. There will be updates from time to time.
+<br>NOTE: This is an ongoing repository. There will be updates from time to time.
+<br>Don't forget to give this a ⭐!
 
 ## GREETINGS!
 Welcome to the fun world of Data Structures and Algorithms! 😸🙌🏻🩷
