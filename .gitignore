@@ -1,3 +1,6 @@
 ECHO is on.
 .vs/
 .vscode/
+
+# Executables
+*.exe
