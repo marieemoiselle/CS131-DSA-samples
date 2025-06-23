@@ -5,7 +5,7 @@ int main() {
 
     int x = 18;
 
-    if (x == 10){
+    if (x < 20){
         cout <<"I've got sunshine on a cloudy day";
     }
     else if (x > 10){
