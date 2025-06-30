@@ -4,7 +4,7 @@ using namespace std;
 //structure of a node
 
 struct Node {
-    int data; //value
+    string data; //value
     Node* next; //pointer to the next value
 };
 
@@ -18,19 +18,28 @@ int main() {
     second = new Node;
     third = new Node;
 
-    head->data = 1;
+    head->data = "Fatima Marie";
     head->next = second;
 
-    second->data = 2;
+    second->data = "Jei";
     second->next = third;
 
-    third->data = 3;
+    third->data = "Renz Marrion";
     third->next = nullptr;
 
     // traversal and printing the linked list elements
     Node* current = head;
-    while (current != nullptr) {
+    /*while (current != nullptr) {
         cout << current->data << " ";
+        current = current->next;
+    }*/
+
+    while (current != nullptr) {
+        cout << current->data << " | " << current->next;
+        if (current->next != nullptr)
+            cout << " -> ";
+        else
+            cout << " -> nullptr";
         current = current->next;
     }
 
