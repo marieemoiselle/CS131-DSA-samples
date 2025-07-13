@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define MAX_SIZE 100
+#define MAX_SIZE 10
 
 class Queue {
 private:
@@ -43,8 +43,8 @@ int main() {
 	queue.enqueue(1);
 	queue.enqueue(2);
 	queue.enqueue(3);
-	queue.dequeue(1);
-	queue.peek(1);
+	queue.dequeue();
+	queue.peek();
 
 	cout << "Peek: " << queue.peek() <<endl;
 	cout << "Dequeue: " << queue.dequeue() <<endl;

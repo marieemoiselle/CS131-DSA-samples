@@ -6,7 +6,7 @@ using namespace std;
 
 int main(){
     string input;
-    cout<<"Enter a string: ";
+    cout<<"Enter a string: "; 
     getline(cin, input);
     
     stack<char>stack;

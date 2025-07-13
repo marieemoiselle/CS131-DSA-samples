@@ -1,103 +1,23 @@
-/*
-    C++ PROGRAM FOR LINKED LIST OPERATIONS
-    Insertion
-        - insert at beginning
-        - insert after a node
-        - insert at the end
-    Deletion
-        - deleting a node at a certain location
-    Traverse
-        - traverses the list
-    Print
-        - prints the list
-*/
-
 #include <iostream>
 #include <string>
 using namespace std;
 
-// creating a node
+// Node structure
 struct Node {
     string data;
-    struct Node* next;
+    Node* next;
 };
 
-// insert at the beginning of the linked list
-void insertAtBeginning(struct Node** head_ref, string new_data) {
-    Node* new_node = new Node();
-    new_node->data = new_data;
-    new_node->next = (*head_ref);
-    (*head_ref) = new_node;
-}
+// FUNCTION PROTOTYPES //
+void insertAtBeginning(Node** head_ref, string new_data);
+void insertAtEnd(Node** head_ref, string new_data);
+void insertAfter(Node* prev_node, string new_data);
+void deleteNode(Node** head_ref, string key);
+void printList(Node* node);
 
-// insert node at the end of the linked list
-void insertAtEnd(struct Node** head_ref, string new_data) {
-    Node* new_node = new Node();
-    Node* last = *head_ref;
-
-    new_node->data = new_data;
-    new_node->next = NULL;
-
-    if (*head_ref == NULL) {
-        *head_ref = new_node;
-        return;
-    }
-
-    while (last->next != NULL) {
-        last = last->next;
-    }
-
-    last->next = new_node;
-}
-
-// insert a node after a specified node
-void insertAfter(struct Node* prev_node, string new_data) {
-    if (prev_node == NULL) {
-        cout << "The given previous node cannot be NULL\n";
-        return;
-    }
-
-    Node* new_node = new Node();
-    new_node->data = new_data;
-    new_node->next = prev_node->next;
-    prev_node->next = new_node;
-}
-
-// delete a node with a specified data value
-void deleteNode(struct Node** head_ref, string key) {
-    Node* temp = *head_ref;
-    Node* prev = NULL;
-
-    if (temp != NULL && temp->data == key) {
-        *head_ref = temp->next;
-        delete temp;
-        return;
-    }
-
-    while (temp != NULL && temp->data != key) {
-        prev = temp;
-        temp = temp->next;
-    }
-
-    if (temp == NULL) return;
-
-    prev->next = temp->next;
-    delete temp;
-}
-
-// Function to print the linked list
-void printList(struct Node* node) {
-    int index = 0;
-    while (node != NULL) {
-        cout << "[" << index << "]: " << node->data << endl;
-        node = node->next;
-        index++;
-    }
-}
-
-// Main function
+// MAIN FUNCTION //
 int main() {
-    struct Node* head = NULL;
+    Node* head = nullptr;
     int choice;
     string value;
     string position;
@@ -112,61 +32,155 @@ int main() {
         cout << "6. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
-        cin.ignore(); // Clear the newline character left in the buffer
+        cin.ignore();
 
-switch (choice) {
+        switch (choice) {
             case 1:
-                cout << "Enter value to insert at the beginning. Press 'x' to cancel:  ";
+                cout << "Enter value to insert at the beginning (or 'x' to cancel): ";
                 getline(cin, value);
                 if (value == "x") break;
                 insertAtBeginning(&head, value);
                 break;
 
             case 2:
-                cout << "Enter value to insert at the end. Press 'x' to cancel: ";
+                cout << "Enter value to insert at the end (or 'x' to cancel): ";
                 getline(cin, value);
                 if (value == "x") break;
                 insertAtEnd(&head, value);
                 break;
 
             case 3:
-                cout << "Enter value to insert after a node. Press 'x' to cancel: ";
+                cout << "Enter new value to insert (or 'x' to cancel): ";
                 getline(cin, value);
                 if (value == "x") break;
-                cout << "Enter position to insert after. Press 'x' to cancel: ";
+                cout << "Insert after which position? (index starts at 0, or 'x' to cancel): ";
                 getline(cin, position);
                 if (position == "x") break;
-                {
+
+                try {
+                    int posIndex = stoi(position);
                     Node* temp = head;
-                    while (temp != NULL && temp->data != position) {
+                    int currentIndex = 0;
+
+                    while (temp != nullptr && currentIndex < posIndex) {
                         temp = temp->next;
+                        currentIndex++;
                     }
-                    if (temp != NULL) {
+
+                    if (temp != nullptr) {
                         insertAfter(temp, value);
                     } else {
-                        cout << "Position data not found\n";
+                        cout << "Position index out of bounds.\n";
                     }
+                } catch (...) {
+                    cout << "Invalid index input.\n";
                 }
                 break;
 
             case 4:
-                cout << "Enter value to delete. Press 'x' to cancel:  ";
+                cout << "Enter value to delete (or 'x' to cancel): ";
                 getline(cin, value);
                 if (value == "x") break;
                 deleteNode(&head, value);
                 break;
 
             case 5:
-                cout << "Current List:\n";
+                cout << "\nCurrent List:\n";
                 printList(head);
                 break;
 
             case 6:
+                cout << "Exiting program.\n";
                 return 0;
 
             default:
-                cout << "Invalid choice\n";
+                cout << "Invalid choice. Try again.\n";
                 break;
         }
+    }
+
+    return 0;
+}
+
+// FUNCTION DEFINITIONS //
+
+void insertAtBeginning(Node** head_ref, string new_data) {
+    Node* new_node = new Node();
+    new_node->data = new_data;
+    new_node->next = *head_ref;
+    *head_ref = new_node;
+}
+
+void insertAtEnd(Node** head_ref, string new_data) {
+    Node* new_node = new Node();
+    new_node->data = new_data;
+    new_node->next = nullptr;
+
+    if (*head_ref == nullptr) {
+        *head_ref = new_node;
+        return;
+    }
+
+    Node* last = *head_ref;
+    while (last->next != nullptr) {
+        last = last->next;
+    }
+
+    last->next = new_node;
+}
+
+void insertAfter(Node* prev_node, string new_data) {
+    if (prev_node == nullptr) {
+        cout << "Cannot insert after a null node.\n";
+        return;
+    }
+
+    Node* new_node = new Node();
+    new_node->data = new_data;
+    new_node->next = prev_node->next;
+    prev_node->next = new_node;
+}
+
+void deleteNode(Node** head_ref, string key) {
+    Node* temp = *head_ref;
+    Node* prev = nullptr;
+
+    // if head needs to be deleted
+    if (temp != nullptr && temp->data == key) {
+        *head_ref = temp->next;
+        delete temp;
+        cout << "Node with value '" << key << "' deleted.\n";
+        return;
+    }
+
+    // search for node
+    while (temp != nullptr && temp->data != key) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    // node not found
+    if (temp == nullptr) {
+        cout << "Node with value '" << key << "' not found.\n";
+        return;
+    }
+
+    // remove the node
+    prev->next = temp->next;
+    delete temp;
+    cout << "Node with value '" << key << "' deleted.\n";
+}
+
+// print the linked list
+void printList(Node* node) {
+    if (node == nullptr) {
+        cout << "[Empty List]\n";
+        return;
+    }
+
+    int index = 0;
+    while (node != nullptr) {
+        cout << "[" << index++ << "]: " << node->data << endl;
+        node = node->next;
     }
 }

@@ -40,7 +40,10 @@ public:
 
 int main() {
 	Stack stack;
-	stack.pop();
-	stack.peek();
+	stack.push(18);
+	stack.push(27);
+	stack.push(36);
+	stack.pop(27);
+	cout<<stack.peek();
 	return 0;
 }
