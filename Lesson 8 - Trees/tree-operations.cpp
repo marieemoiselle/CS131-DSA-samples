@@ -107,16 +107,17 @@ int main() {
     inOrderTraversal(root);
     cout << endl;
 
+    // delete a node from the binary tree
+    root = deleteNode(root, 50);
+
     // search for a value in the binary tree
-    int value = 40;
+    int value = 50;
     if (searchNode(root, value)) {
         cout << "Value " << value << " found in the tree." << endl;
     } else {
         cout << "Value " << value << " not found in the tree." << endl;
     }
 
-    // delete a node from the binary tree
-    root = deleteNode(root, 50);
 
     // perform in-order traversal after deletion
     cout << "In-Order Traversal after deleting 50: ";

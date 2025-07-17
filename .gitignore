@@ -2,6 +2,6 @@ ECHO is on.
 .vs/
 .vscode/
 build/
-kpop-priority_queue.cpp
+
 # Executables
 *.exe

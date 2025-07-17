@@ -58,13 +58,13 @@ int main() {
     TreeNode* root = nullptr;
 
     // insert nodes into the binary tree
-    root = insertNode(root, 50);
-    insertNode(root, 30);
-    insertNode(root, 70);
-    insertNode(root, 20);
-    insertNode(root, 40);
-    insertNode(root, 60);
-    insertNode(root, 80);
+    root = insertNode(root, 27);
+    insertNode(root, 14);
+    insertNode(root, 35);
+    insertNode(root, 10);
+    insertNode(root, 19);
+    insertNode(root, 31);
+    insertNode(root, 42);
 
     // perform in-order traversal
     cout << "In-Order Traversal: ";
