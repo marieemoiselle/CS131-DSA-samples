@@ -1,0 +1,18 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main () {
+
+    int numbers[5] = {6, 12, 18, 24, 30};
+    int size = sizeof(numbers) / sizeof(int);
+    cout << "Base Address: " << numbers << endl;
+
+    for (int i = 0; i < size; i++) {
+        cout << "numbers [" << i << "] = " 
+             << setw(3) << numbers[i] 
+             << " | address: " << &numbers[i] << endl;
+    }
+
+    return 0;
+}
