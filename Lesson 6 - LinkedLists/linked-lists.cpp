@@ -4,8 +4,8 @@ using namespace std;
 
 // Create a node
 struct Node {
-  int data;
-  struct Node* next;
+  int data;           // value or data of the node
+  struct Node* next;  // pointer to the next node
 };
 
 void insertAtBeginning(struct Node** head_ref, int new_data) {
