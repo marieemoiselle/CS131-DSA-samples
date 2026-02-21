@@ -11,7 +11,7 @@ int main() {
 
     if (dynamicArray != nullptr) {
         for (int i = 0; i < size; i++) {
-            dynamicArray[i] = i * 10;
+            dynamicArray[i] = i * 3;
         }
 
         for (int i = 0; i < size; i++) {
