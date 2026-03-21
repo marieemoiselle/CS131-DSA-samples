@@ -65,7 +65,7 @@ void saveToFile(stack<Entry> diary) {
         diary.pop();
     }
 
-    // 🔥 FIX: overwrite file (not append)
+    // overwrite file (not append)
     ofstream file("diary.txt");
 
     for (int i = temp.size() - 1; i >= 0; i--) {
@@ -133,7 +133,7 @@ int main() {
 
             diary.push(newEntry);
             saveToFile(diary);
-            
+
             cout << "\n\033[1;32m[ successfully added! ]\033[0m\n";
             
             viewEntries(diary);
