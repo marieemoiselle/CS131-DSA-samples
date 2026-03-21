@@ -4,45 +4,56 @@ using namespace std;
 const int TABLE_SIZE = 10;
 
 class HashTable {
-    private:
-        int table[TABLE_SIZE];
-    public:
-        HashTable(){
-            // all slots will be initialized to -1
-            for(int i = 0; i < TABLE_SIZE; i++) {
-                table[i] = -1;
-            }
+private:
+    int table[TABLE_SIZE];
+    int count; // track number of inserted elements
+
+public:
+    HashTable() {
+        count = 0;
+        for (int i = 0; i < TABLE_SIZE; i++) {
+            table[i] = -1;
+        }
+    }
+
+    // hash function
+    int hashFunction(int key) {
+        return key % TABLE_SIZE;
+    }
+
+    void insert(int key) {
+
+        // check if table is full
+        if (count == TABLE_SIZE) {
+            cout << "Hash Table is FULL! Cannot insert " << key << endl;
+            return;
         }
 
-        // simple hash function, using the key modulo table size.
-        int hashFunction(int key) {
-            return key % TABLE_SIZE;
+        int index = hashFunction(key);
+
+        // linear probing
+        while (table[index] != -1) {
+            index = (index + 1) % TABLE_SIZE;
         }
 
-        void insert(int key) {
-            int index = hashFunction(key);
+        table[index] = key;
+        count++;
 
-            // if slot is already taken
-            // linear probing
+        cout << "Inserted " << key << " at position " << index << endl;
+    }
 
-            while(table[index] != -1) {
-                index = (index + 1) % TABLE_SIZE;
-            }
+    void display() {
+        cout << "\n----- HASH TABLE -----\n";
 
-            table[index] = key;
-            cout <<"Inserted " <<key <<" at position " << index << "\n";
+        for (int i = 0; i < TABLE_SIZE; i++) {
+            cout << "[" << i << "] - ";
+
+            if (table[i] == -1)
+                cout << "{empty}" << endl;
+            else
+                cout << table[i] << endl;
         }
-
-        void display() {
-            cout <<"\n----- HASH TABLE -----\n";
-            for (int i = 0; i < TABLE_SIZE; i++) {
-                cout <<"[" << i <<"] - ";
-                if (table[i] == -1)
-                    cout << "{empty}\n";
-                else
-                    cout << table[i] <<"\n";
-            }
-        }
+    }
 };
 
 int main() {
