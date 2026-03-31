@@ -35,6 +35,10 @@ g++ -Iinclude src/*.cpp -o sortingApp
 ```
 Then run: `./sortingApp`
 
+<h2>‧₊˚ ┊ sample output</h2>
+
+![sample](images/sorting-sample.png)
+
 <h2>‧₊˚ ┊ references</h2>
 
 - [GFG - Sorting Algorithms](https://www.geeksforgeeks.org/dsa/sorting-algorithms/)
