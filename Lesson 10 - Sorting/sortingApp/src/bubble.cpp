@@ -14,6 +14,10 @@ void bubbleSort(int arr[], int n) {
                 swapped = true;
             }
         }
-        if (swapped) display(arr, n);
+        // PRINT EVERY PASS
+        cout << "\033[34mpass " << i + 1 << ": \033[0m";
+        display(arr, n);
+
+        if (!swapped) break;
     }
 }

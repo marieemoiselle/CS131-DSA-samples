@@ -15,6 +15,8 @@ void selectionSort(int arr[], int n) {
         if (minIndex != i)
             swap(arr[i], arr[minIndex]);
 
+        // PRINT EVERY PASS
+        cout << "\033[34mpass " << i + 1 << ": \033[0m";
         display(arr, n);
     }
 }

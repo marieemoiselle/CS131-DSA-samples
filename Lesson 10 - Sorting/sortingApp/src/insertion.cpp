@@ -14,7 +14,10 @@ void insertionSort(int arr[], int n) {
             arr[j + 1] = arr[j];
             j--;
         }
+        
         arr[j + 1] = key;
+        // PRINT EVERY PASS
+        cout << "\033[34mpass " << i << ": \033[0m";
         display(arr, n);
     }
 }
