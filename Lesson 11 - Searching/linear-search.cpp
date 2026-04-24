@@ -35,6 +35,7 @@ int main() {
         if (arr[i] == target) {
             cout << " --> " << GREEN << "ELEMENT FOUND\n" << RESET;
             found = true;
+            break;
         } else {
             cout << " --> not match\n";
         }
@@ -42,15 +43,15 @@ int main() {
 
     // Display results
     if (found) {
-        cout << "\nElement " << target << " found at indices: ";
-        for (int i = 0; i < size; i++) {
+        cout << "\nElement " << target << " found!";
+        /*for (int i = 0; i < size; i++) {
             if (arr[i] == target) {
                 cout << i << " ";
             }
-        }
+        }*/
         cout << endl;
     } else {
-        cout << RED << "\nElement not found.\n" << RESET;
+        cout << RED << "\nElement " << target <<" not found.\n" << RESET;
     }
 
     return 0;
