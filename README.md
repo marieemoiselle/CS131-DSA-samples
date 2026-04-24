@@ -1,4 +1,4 @@
-# DATA STRUCTURES AND ALGORITHMS
+# Data Structures and Algorithms
 by: ***Ms. Fatima Marie P. Agdon, MSCS***
 
 NOTE: This is an ongoing repository. There will be updates from time to time.
@@ -14,33 +14,36 @@ This course is designed for a comprehensive introduction to Data Structures and 
 In this course, **C++** will be used as the programming language. Students must have prior knowledge to its basics: loops, variables, functions, recursions.
 
 ## 🗺️ Roadmap
-***MIDTERM CLASS - 6 Week Timeframe***
-- 🧱 Week 1: **Introduction**
+- 🧱 Lesson 1: **Introduction**
     - Data Structures and Algorithms and its Importance
     - Algorithm Analysis: Time and Space Complexity
     - ***C++ Refresher***: Variables, Functions, Loops
     - ***Introduction to Arrays***: Insertion, Deletion, Traversal, Searching
-- 👆🏻 Week 2: **Pointers, Linked Lists, and Algorithm Analysis**
-    - Pointers and Dynamic Memory in C++
-    - The ```struct``` keyword and Nodes
-    - ***Singly Linked Lists***: Creation, Insertion, Deletion, Traversal
-    - Time Complexity: Arrays vs. Linked Lists
-- ⛓️ Week 3: **Midterm Exam + Doubly and Circular Linked Lists**
-    - ***Doubly Linked Lists***: Operations and Traversal
-    - ***Circular Linked Lists***: Concepts and Basic Implementation
-- 🗃️ Week 4: **Stacks and Queues, Recursion**
-    - ***Stacks*** - Last In, First Out (LIFO)
-    - ***Queues*** - First In, First Out (FIFO)
-    - ***Recursion Basics***: Concept, Base case, Recursive case
-- ⏲️ Week 5: **Hashing and Algorithm Complexity**
+- 👆🏻 Lesson 2: **C++ Structs and Pointers**
+    - ***Review of C++ Structs***: Syntax, creation, usage as function parameters and return values
+    - Introduction to C++ Pointers
+    - Passing by Value vs. Passing by Reference
+- 📋 Lesson 3: C++ Arrays and LinkedLists
+    - ***Review of C++ Arrays***: Definition, Traversal, Operations
+    - Linked Lists (Introduction, Types, Traversing, Operations)
+- 🎲 Lesson 4: **Dynamic Memory Allocation**
+    - Dynamic Structs
+    - Dynamic Arrays
+- 🗃️ Lesson 5: **Stacks and Queues**
+    - Introduction to Stacks
+    - ***Queues***: Simple Queues, Priority Queues
+- 🗄️ Lesson 6: **Hashing**
     - Hash Functions and Collisions (Linear Probing, Chaining)
     - Time Complexity of Hashing Operations
     - Review of Big-O, Omega, Theta
-        - Best, Worst, and Average Case Analysis
-- 🌳 Week 6: **Trees, Sorting Algorithms, Finals**
+- 🌳 Lesson 7: **Trees**
     - Introduction to Binary Trees
-        - Structure, Nodes, Traversals (Preorder, Inorder, Postorder)
-        - Time Complexity of Traversals
-    - Sorting Algorithms: Bubble Sort, Selection Sort, Insertion Sort
-        - Time Complexity and Analysis of Sorting
-    - Final Laboratory Exam
+    - Structure, Nodes, Traversals (Preorder, Inorder, Postorder)
+    - Time Complexity of Traversals
+- 🔎 Lesson 8: **Searching Algorithms**
+    - Binary Search
+    - Linear Search
+- 📦 Lesson 9: **Sorting Algorithms**
+    - Types: Bubble Sort, Insertion Sort
+    - Types: Merge Sort, Quick Sort
+    - Time Complexity and Analysis
