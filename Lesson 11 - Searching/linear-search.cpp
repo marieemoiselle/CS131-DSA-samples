@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 #define RED "\033[31m"
@@ -12,7 +13,7 @@ int main() {
     cout << "Enter array size: ";
     cin >> size;
 
-    int arr[size];
+    vector<int> arr(size);
 
     cout << "Enter " << size << " elements:\n";
     for (int i = 0; i < size; i++) {
@@ -35,6 +36,7 @@ int main() {
         if (arr[i] == target) {
             cout << " --> " << GREEN << "ELEMENT FOUND\n" << RESET;
             found = true;
+            break; // 1st occurence only
         } else {
             cout << " --> not match\n";
         }
@@ -42,14 +44,14 @@ int main() {
 
     // Display results
     if (found) {
-        cout << "\nElement " << target << " found at indices: ";
-        for (int i = 0; i < size; i++) {
+        cout << "\nElement " << target << " found!\n";
+        // disable for only first instance is tracked
+       /* for (int i = 0; i < size; i++) {
             if (arr[i] == target) {
                 cout << i << " ";
-            }
+            }*/
         }
-        cout << endl;
-    } else {
+    else {
         cout << RED << "\nElement not found.\n" << RESET;
     }
 
